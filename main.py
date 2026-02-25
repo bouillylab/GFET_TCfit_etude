@@ -16,6 +16,10 @@ def extractTC(fichier, fmt="stack", methode="csv") :
     Vg, time, I_s, I_d, I_g = data.T
 
     if fmt == "stack" :
+        # retourner le data en 2 par N
+        pass
+    else :
+        # retourner le data comme tel
         pass
 
 def main(fichier) :
