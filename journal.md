@@ -27,3 +27,12 @@ Cette méthode pourrait aussi permettre de trouver les point de EDC que LP avait
 
 #### il sera peut-être important aussi de détermine la fréquence à laquelle les TC ont été prisent pour voir si les paramètres mesuré sont en accord avec les attentes
 
+## 27 février 2026
+
+Le fichier `CSVRead.py` est en grande partie complet maintenant, il a la capacité de prendre une fonction de formatage en argument et retourner le data selon le format spécifié, ce qui est assez cool
+
+La fitting des courbes TC n'est pas complet, il y aura des "corrections" à faire, le curve\_fit a beaucoup de difficulté à bien trouver les paramètres. Les mêmes problèmes que la dernière fois, mais cette fois je vois que si je laisse le curve\_fit faire ce qu'il veut, il va me trouver des réponses qui fit bien les bordures, donc là où le data arrête vite d'être bon et linéaire, un des jeu de donné de Paul, l'une des TC vers la fin, au lieu de plafonner, redéscent vers le bas. Le curve\_fit décide de completement détruire le sigmoid pour faire en sorte que la erf puisse prendre cette forme courbé à la fin, ce qui vient détruire le V\_CNP.
+
+Il est donc sur que non seulement une manière robuste de couper en deux le data proche du V\_CNP est nécessaire, mais aussi un méthode qui viendra couper le data clairement erroné.
+
+### Il serait intéressant de trouver la dérivé analytique de la fonction TC 
